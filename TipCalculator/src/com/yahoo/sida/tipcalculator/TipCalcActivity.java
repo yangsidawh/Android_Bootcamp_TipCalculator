@@ -144,12 +144,6 @@ public class TipCalcActivity extends Activity {
         
     }
     
-//    private void setParam() {
-//    	 //TODO error handling for numbers
-//        totalAmount = Double.parseDouble(etTotal.getText().toString());
-//        percentage = Integer.parseInt(etPercent.getText().toString());
-//        numOfPeople = Integer.parseInt(etNumOfPpl.getText().toString());        
-//    }
     
     public void onBtnClick(View v) {
     	percentage = (Integer) v.getTag();
@@ -172,6 +166,7 @@ public class TipCalcActivity extends Activity {
     	}
     }
     
+    //Get & save percentage
     private void readSettings() {
     	File fileDir = getFilesDir();
     	File setting = new File(fileDir, "setting.cfg");
