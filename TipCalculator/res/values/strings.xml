@@ -3,7 +3,7 @@
 
     <string name="app_name">TipCalculator</string>
     <string name="hello_world">Hello world!</string>
-    <string name="total">Input your total amount here</string>
+    <string name="total">Total amount here</string>
     <string name="tip10">10%</string>
     <string name="tip15">15%</string>
     <string name="tip20">20%</string>

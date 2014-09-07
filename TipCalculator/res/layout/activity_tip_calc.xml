@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1b1b1b"
     tools:context="${relativePackage}.${activityClass}" >
 
     <EditText
@@ -15,38 +16,44 @@
         android:ems="10"
         android:gravity="center"
         android:hint="@string/total"
-        android:inputType="numberDecimal" >
-
+        android:inputType="numberDecimal"
+        android:selectAllOnFocus="true"
+        android:textColor="#0e91ab" >
     </EditText>
 
     <Button
         android:id="@+id/btTip15"
+        style="@style/btnStyleArsenic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etTotal"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_marginTop="70dp"
-		android:onClick="onBtnClick"
+        android:onClick="onBtnClick"
         android:text="@string/tip15" />
 
     <Button
         android:id="@+id/btTip10"
+        style="@style/btnStyleArsenic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btTip15"
         android:layout_alignBottom="@+id/btTip15"
         android:layout_toLeftOf="@+id/btTip15"
-        android:onClick="onBtnClick"    
+        android:onClick="onBtnClick"
         android:text="@string/tip10" />
 
     <Button
         android:id="@+id/btTip20"
+        style="@style/btnStyleArsenic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btTip15"
         android:layout_alignBottom="@+id/btTip15"
         android:layout_toRightOf="@+id/btTip15"
-		android:onClick="onBtnClick"
+        android:onClick="onBtnClick"
         android:text="@string/tip20" />
 
     <TextView
@@ -59,7 +66,8 @@
         android:layout_marginBottom="50dp"
         android:gravity="center_vertical"
         android:text="@string/tips"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#0e91ab" />
 
     <TextView
         android:id="@+id/tvPerLabel"
@@ -70,7 +78,8 @@
         android:layout_marginBottom="20dp"
         android:layout_toLeftOf="@+id/etCustomPerc"
         android:text="@string/tipPercent"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#0e91ab" />
 
     <EditText
         android:id="@+id/etNumPpl"
@@ -84,7 +93,10 @@
         android:gravity="bottom|right"
         android:inputType="number"
         android:maxLength="3"
-        android:text="1" />
+        android:paddingBottom="0dp"
+        android:selectAllOnFocus="true"
+        android:text="1"
+        android:textColor="#0e91ab" />
 
     <EditText
         android:id="@+id/etCustomPerc"
@@ -99,17 +111,21 @@
         android:gravity="bottom|right"
         android:inputType="number"
         android:maxLength="3"
-        android:text="15" />
+        android:paddingBottom="0dp"
+        android:selectAllOnFocus="true"
+        android:text="15"
+        android:textColor="#0e91ab" />
 
     <TextView
         android:id="@+id/tvNumPp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/tvPerLabel"
-        android:layout_marginTop="20dp"
         android:layout_below="@+id/btTip15"
+        android:layout_marginTop="20dp"
         android:text="@string/numOfPp"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#0e91ab" />
 
     <TextView
         android:id="@+id/tvTipsTotal"
@@ -120,7 +136,8 @@
         android:layout_toRightOf="@+id/tvTipsPerPpLabel"
         android:gravity="right"
         android:text="0"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#0e91ab" />
 
     <TextView
         android:id="@+id/tvTipsPerPpLabel"
@@ -129,7 +146,8 @@
         android:layout_alignLeft="@+id/tvResult"
         android:layout_below="@+id/tvTipsTotal"
         android:text="@string/perPeople"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#0e91ab" />
 
     <TextView
         android:id="@+id/tvTipsPerPp"
@@ -141,6 +159,7 @@
         android:layout_alignRight="@+id/tvTipsTotal"
         android:gravity="right"
         android:text="0"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#0e91ab" />
 
 </RelativeLayout>

@@ -1,6 +1,11 @@
 package com.yahoo.sida.tipcalculator;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+
+import org.apache.commons.io.FileUtils;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -32,11 +37,7 @@ public class TipCalcActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tip_calc);
-        //Initialize default value
-        totalAmount = 0;
-        percentage = 15;
-        numOfPeople = 1;
+        setContentView(R.layout.activity_tip_calc);      
         
         //set different views
         etTotal = (EditText) findViewById(R.id.etTotal);
@@ -55,6 +56,11 @@ public class TipCalcActivity extends Activity {
         bt15.setTag(15);
         bt20.setTag(20);
         
+        //Initialize default value
+        totalAmount = 0;
+        numOfPeople = 1;
+        readSettings();
+
         //add text change listener
         etTotal.addTextChangedListener(new TextWatcher() {
 
@@ -158,8 +164,34 @@ public class TipCalcActivity extends Activity {
     		
     		tvTipsTotal.setText('$' +  df.format(tips));
     		tvTipsPerPerson.setText('$' + df.format(tipsPerPerson));
+    		
+    		saveSettings();
     	} catch (Exception e) {
+    		
     		e.printStackTrace();
     	}
     }
+    
+    private void readSettings() {
+    	File fileDir = getFilesDir();
+    	File setting = new File(fileDir, "setting.cfg");
+    	try {
+    		percentage = Integer.parseInt(FileUtils.readFileToString(setting));
+    		etPercent.setText(String.valueOf(percentage));
+    	} catch (IOException e) {
+    		percentage = 15;
+    		e.printStackTrace();
+    	}
+    }
+    
+    private void saveSettings() {
+    	File fileDir = getFilesDir();
+    	File setting = new File(fileDir, "setting.cfg");
+    	try {
+    		FileUtils.writeStringToFile(setting, String.valueOf(percentage), false);
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	} 
+    }
+    
 }
