@@ -4,9 +4,143 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
+    <EditText
+        android:id="@+id/etTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="20dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/total"
+        android:inputType="numberDecimal" >
+
+    </EditText>
+
+    <Button
+        android:id="@+id/btTip15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etTotal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+		android:onClick="onBtnClick"
+        android:text="@string/tip15" />
+
+    <Button
+        android:id="@+id/btTip10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btTip15"
+        android:layout_alignBottom="@+id/btTip15"
+        android:layout_toLeftOf="@+id/btTip15"
+        android:onClick="onBtnClick"    
+        android:text="@string/tip10" />
+
+    <Button
+        android:id="@+id/btTip20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btTip15"
+        android:layout_alignBottom="@+id/btTip15"
+        android:layout_toRightOf="@+id/btTip15"
+		android:onClick="onBtnClick"
+        android:text="@string/tip20" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvNumPp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tvNumPp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_vertical"
+        android:text="@string/tips"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvPerLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btTip10"
+        android:layout_alignLeft="@+id/etTotal"
+        android:layout_marginBottom="20dp"
+        android:layout_toLeftOf="@+id/etCustomPerc"
+        android:text="@string/tipPercent"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/etNumPpl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvNumPp"
+        android:layout_alignLeft="@+id/etCustomPerc"
+        android:layout_alignRight="@+id/etCustomPerc"
+        android:layout_below="@+id/btTip20"
+        android:ems="10"
+        android:gravity="bottom|right"
+        android:inputType="number"
+        android:maxLength="3"
+        android:text="1" />
+
+    <EditText
+        android:id="@+id/etCustomPerc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvPerLabel"
+        android:layout_alignLeft="@+id/btTip20"
+        android:layout_alignRight="@+id/etTotal"
+        android:layout_below="@+id/etTotal"
+        android:layout_marginLeft="50dp"
+        android:ems="10"
+        android:gravity="bottom|right"
+        android:inputType="number"
+        android:maxLength="3"
+        android:text="15" />
+
+    <TextView
+        android:id="@+id/tvNumPp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvPerLabel"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/btTip15"
+        android:text="@string/numOfPp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/tvTipsTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tvResult"
+        android:layout_alignRight="@+id/etNumPpl"
+        android:layout_toRightOf="@+id/tvTipsPerPpLabel"
+        android:gravity="right"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTipsPerPpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvResult"
+        android:layout_below="@+id/tvTipsTotal"
+        android:text="@string/perPeople"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/tvTipsPerPp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvTipsPerPpLabel"
+        android:layout_alignBottom="@+id/tvTipsPerPpLabel"
+        android:layout_alignLeft="@+id/tvTipsTotal"
+        android:layout_alignRight="@+id/tvTipsTotal"
+        android:gravity="right"
+        android:text="0"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
